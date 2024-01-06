@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointillism</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #1b1b1b;
+      color: white;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    ul, ol {
+      list-style-type: none;
+    }
+
+    li {
+      padding-bottom: 0.5em;
+    }
+
+    #sketch-holder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <script src="p5.min.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <script src="poisson_disk.js"></script>
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="sketch-holder">
+      <h1>Pointillism</h1>
+      <canvas id="canvas"></canvas>
+      <ul>
+        <li>
+          <input type="file" name="img-loader" id="img-loader" size="24" onchange="load_new_img(event)" alt="" />
+        </li>
+        <li>
+          <ol>
+            <li>
+              <label for="radius-1">Radius 1</label>
+              <input type="range" class="radius" id="radius-1" name="radius-1" min="0" max="500" value="200" step="1"
+                oninput="this.nextElementSibling.value = this.value">
+              <output>200</output>
+            </li>
+            <li>
+              <label for="radius-2">Radius 2</label>
+              <input type="range" class="radius" id="radius-2" name="radius-1" min="0" max="500" value="100" step="1"
+                oninput="this.nextElementSibling.value = this.value">
+              <output>100</output>
+            </li>
+            <li>
+              <label for="radius-3">Radius 3</label>
+              <input type="range" class="radius" id="radius-3" name="radius-3" min="0" max="500" value="50" step="1"
+                oninput="this.nextElementSibling.value = this.value">
+              <output>50</output>
+            </li>
+            <li>
+              <label for="radius-4">Radius 4</label>
+              <input type="range" class="radius" id="radius-4" name="radius-4" min="0" max="500" value="10" step="1"
+                oninput="this.nextElementSibling.value = this.value">
+              <output>10</output>
+            </li>
+            <li>
+              <label for="radius-5">Radius 5</label>
+              <input type="range" class="radius" id="radius-5" name="radius-5" min="0" max="500" value="0" step="1"
+                oninput="this.nextElementSibling.value = this.value">
+              <output>0</output>
+            </li>
+
+          </ol>
+        <li>
+          <label for="over-sample">Over sampling rate</label>
+          <input type="range" id="over-sample" name="over-sample" min="0.1" max="5" value="1" step="0.1"
+            oninput="this.nextElementSibling.value = this.value">
+          <output>1</output>
+        <li>
+          <label for="animate">Animate</label>
+          <input type="checkbox" id="animate" name="animate">
+        </li>
+        <li>
+          <button id="save">Save</button>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+</body>
+
+</html>
